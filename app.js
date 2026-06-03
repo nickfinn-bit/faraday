@@ -614,7 +614,7 @@ let rafId = null;
 /* =====================================================================
    DAQ connection state
    ===================================================================== */
-let dacConnected = true;
+let dacConnected = false;
 
 function setDacConnected(connected) {
   dacConnected = connected;
