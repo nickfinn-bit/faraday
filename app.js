@@ -590,6 +590,7 @@ const el = {
   videoTime: document.getElementById('videoTime'),
   videoStatusLabel: document.getElementById('videoStatusLabel'),
   recIndicator: document.getElementById('recIndicator'),
+  daqStatus: document.getElementById('daqStatus'),
 };
 
 const airChart = new PressureChart(document.getElementById('airChart'), '#1c6fa6');
@@ -609,6 +610,17 @@ let lastSolenoidOpen  = false;
 let lastSolenoidClose = false;
 let lastTemps = null;
 let rafId = null;
+
+/* =====================================================================
+   DAQ connection state
+   ===================================================================== */
+let dacConnected = true;
+
+function setDacConnected(connected) {
+  dacConnected = connected;
+  el.daqStatus.textContent = connected ? 'CONNECTED' : 'DISCONNECTED';
+  el.daqStatus.className = connected ? 'ok' : 'err';
+}
 
 /* =====================================================================
    Profile selection

@@ -428,6 +428,10 @@ body {
   color: var(--ok);
   animation: daq-pulse 3.2s ease-in-out infinite;
 }
+.status-cell .err {
+  color: #c0392b;
+  animation: none;
+}
 .status-cell-right { margin-left: auto; border-right: none; }
 
 @keyframes daq-pulse {
